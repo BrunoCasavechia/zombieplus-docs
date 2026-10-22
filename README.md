@@ -115,10 +115,10 @@ Os diagramas e a descrição foram gerados com apoio de IA generativa a partir d
 | Web App em React | Confirmado | Vi as classes `sc-...` do styled-components no DevTools. |
 | Login em `POST /sessions` retornando JWT | Confirmado | Testei no Postman e usei o token como Bearer. |
 | Upload de capa em `multipart/form-data` | Confirmado | Enviei pelo Postman com body form-data. |
-| API em Node.js e banco PostgreSQL | A confirmar | _Preencher após verificar o projeto do curso._ |
-| Rota `POST /movies` | A confirmar | _Preencher._ |
-| Respostas 409 e 400 no cadastro de filme | A confirmar | _Preencher após testar título duplicado e campo vazio._ |
-| Armazenamento das capas | Lacuna | _Preencher._ |
+| API em Node.js e banco PostgreSQL | Confirmado (código-fonte) | Li o código da API: Node.js com Express e banco PostgreSQL via Sequelize (driver `pg`, porta 5432). |
+| Rota `POST /movies` | Confirmado (código-fonte) | Exige token. Recebe `title`, `overview`, `release_year`, `company_id` e `featured` (todos obrigatórios) e `cover` (opcional). Retorna 201. A IA não tinha como saber que `featured` é obrigatório. |
+| Respostas 409 e 400 no cadastro de filme | Confirmado (código-fonte) | Título duplicado: 409 com `bcode 1001`. Campo obrigatório ausente ou vazio: 400 "Validation fails". Achado que a IA não previu: empresa inexistente também retorna 400 ("Company not found."). |
+| Armazenamento das capas | Confirmado (código-fonte) | Disco local: o multer salva o arquivo na pasta `uploads` da API, e o banco guarda só o nome do arquivo. |
 
 Decisões que tomei sobre o formato:
 
